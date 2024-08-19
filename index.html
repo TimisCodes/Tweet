@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-image: url(./gif.gif);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        section{
+            position: relative;
+            top: 120px;
+            display: inline-block;
+            justify-content: center;
+            height: 70vh;
+            align-items: center;
+            margin-left: 40%;
+        }
+        section h1{
+            font-size: 50px;
+            text-align: center;
+            color: white;
+            padding-bottom: 20px;
+            color: white;
+        }
+        section p{
+            color: white;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        button{
+            background-color: blueviolet;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin-left: 20px;
+            display: block;
+            margin-left: 150px;
+        }
+        textarea{
+            width: 400px;
+            height: 35vh;
+        }
+        #tweethere{
+            position: relative;
+            top: 20px;
+            background-color: white;
+            color: black;
+            width: 400px;
+            height: 5vh;
+            border-radius: 15px;
+        }
+        #tweetcontent{
+            margin-top: 10px;
+            width: 400px;
+            height: 100px;
+            background-color: white;
+            color: black;
+            max-width: 400px;
+            font-size: 15px;
+        }
+
+        @media (max-width: 400px){
+            section{
+                margin-left: 0px;
+            }
+        }
+        
+        @media (max-width: 430px){
+            section{
+                margin-left: 0px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="tweet">
+        <h1> Tweet</h1>
+        <div>
+    <textarea id="textarea"></textarea>
+    <p id="textcontent"></p>
+<button id="button">Tweet</button>
+    </div>
+
+    <h3 id="tweetcontent"></h3>
+
+    <!-- <div class="tweeted">
+        <input id="tweethere" type="text">
+    </div> -->
+</section>
+    <script type="text/javascript">
+
+    document.getElementById("button").onclick=function(){
+
+        
+var twitterTweet = document.getElementById("textarea").value; 
+var twitterTweetAmount = twitterTweet.length;
+var twitterTweetSlice = twitterTweet.slice(0,99);
+var twitterTweetSliceLength =twitterTweetSlice.length;
+
+        document.getElementById("textcontent").innerHTML= twitterTweetSliceLength + " characters " + (99 - twitterTweetSliceLength) + " left ";
+
+        document.getElementById("tweetcontent").innerHTML = twitterTweetSlice;
+    } 
+
+// alert(twitterTweetSlice + " - " + twitterTweetSliceLength + " characters " + (559 - twitterTweetSliceLength) + " left ")
+
+    </script>
+</body>
+</html>
